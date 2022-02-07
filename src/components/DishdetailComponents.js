@@ -5,7 +5,7 @@ class DishDetail extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { selectedDish: null };
+    // this.state = { selectedDish: null };
   }
 
   renderDish(selectedDish) {
@@ -60,13 +60,16 @@ class DishDetail extends Component {
   }
 
   render() {
-    if (this.props.selectedDish == null) {
+    if (this.props.dish == null) {
       return <div></div>;
     }
+
     return (
-      <div className="row">
-        {this.renderDish(this.props.selectedDish)}
-        {this.renderComments(this.props.selectedDish)}
+      <div className="container">
+        <div className="row">
+          {this.renderDish(this.props.dish)}
+          {this.renderComments(this.props.dish)}
+        </div>
       </div>
     );
   }
