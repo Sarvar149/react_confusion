@@ -17,6 +17,7 @@ function RenderCard({ item }) {
         {item.designation ? (
           <CardSubtitle>{item.designation}</CardSubtitle>
         ) : null}
+        <CardText>{item.description}</CardText>
       </CardBody>
     </Card>
   );
