@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Menu from "./MenuComponent";
-import DishDetail from "./DishdetailComponents";
+import DishDetail from "./DishdetailComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
@@ -37,7 +37,7 @@ class Main extends Component {
       return (
         <DishDetail
           dish={
-            this.state.dishes.filter(
+            this.props.dishes.filter(
               (dish) => dish.id === parseInt(match.params.dishId, 10)
             )[0]
           }
