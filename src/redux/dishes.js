@@ -1,7 +1,11 @@
 import * as ActionTypes from "./ActionTypes";
 
 export const Dishes = (
-  state = { isLoading: true, errMess: null, dishes: [] },
+  state = {
+    isLoading: true,
+    errMess: null,
+    dishes: [],
+  },
   action
 ) => {
   switch (action.type) {
@@ -26,6 +30,7 @@ export const Dishes = (
         ...state,
         isLoading: false,
         errMess: action.payload,
+        dishes: [],
       };
 
     default:

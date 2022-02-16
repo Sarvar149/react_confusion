@@ -8,6 +8,7 @@ import {
   Media,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../shared/baseUrl";
 
 const RenderLeader = ({ leader }) => {
   return (
@@ -15,7 +16,7 @@ const RenderLeader = ({ leader }) => {
       <Media tag="li">
         <Media left middle>
           <div className="col-md-2">
-            <Media object src={leader.image} alt={leader.name} />
+            <Media object src={baseUrl + leader.image} alt={leader.name} />
           </div>
         </Media>
         <div className="col-md-10">
