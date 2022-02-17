@@ -40,7 +40,7 @@ class Comment extends Component {
 
   submitHandle(values) {
     this.toggleModel();
-    this.props.addComment(
+    this.props.postComment(
       this.props.dishId,
       values.rating,
       values.author,
@@ -162,7 +162,7 @@ function RenderDish({ dish }) {
   }
 }
 
-function RenderComments({ comments, addComment, dishId }) {
+function RenderComments({ comments, postComment, dishId }) {
   if (comments == null) {
     return <div></div>;
   } else {
@@ -186,7 +186,7 @@ function RenderComments({ comments, addComment, dishId }) {
       <>
         <h4>Comments</h4>
         <ul className="list-unstyled">{cmns}</ul>
-        <Comment dishId={dishId} addComment={addComment} />
+        <Comment dishId={dishId} postComment={postComment} />
       </>
     );
   }
@@ -231,7 +231,7 @@ const DishDetail = (props) => {
           <div className="col-12 col-md-5 m-1">
             <RenderComments
               comments={props.comments}
-              addComment={props.addComment}
+              postComment={props.postComment}
               dishId={props.dish.id}
             />
           </div>
