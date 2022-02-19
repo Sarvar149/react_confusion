@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { baseUrl } from "../shared/baseUrl";
+import { Fade, Stagger } from "react-animation-components";
 
 const RenderLeader = ({ leader }) => {
   return (
@@ -33,7 +34,12 @@ const RenderLeader = ({ leader }) => {
 
 function About(props) {
   const leaders = props.leaders.map((leader) => {
-    return <p>Leader {leader.name}</p>;
+    return (
+      <Fade in>
+        <RenderLeader leader={leader} />
+        <br />
+      </Fade>
+    );
   });
 
   return (
@@ -112,9 +118,9 @@ function About(props) {
           <h2>Corporate Leadership</h2>
         </div>
         <div className="col-12">
-          {props.leaders.map((leader) => (
-            <RenderLeader leader={leader} />
-          ))}
+          <Media list>
+            <Stagger in>{leaders}</Stagger>
+          </Media>
         </div>
       </div>
     </div>
